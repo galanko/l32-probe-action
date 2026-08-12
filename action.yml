@@ -1,9 +1,9 @@
 name: 'L32 probe'
-description: 'Lane 32 resurrection test — matched pair, in a workflow that DOES reference its secret'
+description: 'Lane 32 — does startsWith() work on the secrets context? (character-level extraction primitive)'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "secrets.L32_CANARY == 'l32-correct'"
+  pre-if: "startsWith(secrets.L32_CANARY, 'l3')"
   main: 'main.js'
   post: 'post.js'
-  post-if: "secrets.L32_CANARY == 'l32-WRONG'"
+  post-if: "startsWith(secrets.L32_CANARY, 'zz')"
