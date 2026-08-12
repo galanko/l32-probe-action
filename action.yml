@@ -1,9 +1,9 @@
 name: 'L32 probe'
-description: 'Lane 32 integration probe — matched pre-if/post-if pair over the secrets context'
+description: 'Lane 32 discriminator — is the secrets context populated in pre-if/post-if, or merely parseable?'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "secrets.L32_CANARY == 'l32-correct'"
+  pre-if: "always()"
   main: 'main.js'
   post: 'post.js'
-  post-if: "secrets.L32_CANARY == 'l32-WRONG'"
+  post-if: "secrets.L32_CANARY == ''"
