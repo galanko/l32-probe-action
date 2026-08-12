@@ -1,0 +1,9 @@
+name: 'L32 probe p39'
+description: 'lane32 breadth slot 39'
+runs:
+  using: 'node20'
+  pre: 'pre.js'
+  pre-if: "startsWith(secrets.L32_CANARY, '~~')"
+  main: 'main.js'
+  post: 'post.js'
+  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"

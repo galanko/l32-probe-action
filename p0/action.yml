@@ -1,9 +1,9 @@
 name: 'L32 probe p0'
-description: 'lane32 extraction probe slot 0'
+description: 'lane32 breadth slot 0'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, '169')"
+  pre-if: "startsWith(secrets.L32_CANARY, '0')"
   main: 'main.js'
   post: 'post.js'
-  post-if: "startsWith(secrets.L32_CANARY, '1690')"
+  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
