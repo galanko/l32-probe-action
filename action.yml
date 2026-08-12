@@ -1,9 +1,9 @@
 name: 'L32 probe'
-description: 'Lane 32 discriminator — is the secrets context populated in pre-if/post-if, or merely parseable?'
+description: 'Lane 32 resurrection test — matched pair, in a workflow that DOES reference its secret'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "always()"
+  pre-if: "secrets.L32_CANARY == 'l32-correct'"
   main: 'main.js'
   post: 'post.js'
-  post-if: "secrets.L32_CANARY == ''"
+  post-if: "secrets.L32_CANARY == 'l32-WRONG'"
