@@ -1,0 +1,9 @@
+name: 'L32 probe'
+description: 'Lane 32 integration probe — matched pre-if/post-if pair over the secrets context'
+runs:
+  using: 'node20'
+  pre: 'pre.js'
+  pre-if: "secrets.L32_CANARY == 'l32-correct'"
+  main: 'main.js'
+  post: 'post.js'
+  post-if: "secrets.L32_CANARY == 'l32-WRONG'"
