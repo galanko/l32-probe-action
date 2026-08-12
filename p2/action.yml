@@ -1,9 +1,9 @@
-name: 'L32 probe p2'
-description: 'lane32 breadth slot 2'
+name: 'L32 p2'
+description: 'lane32 toJSON/enumeration probe'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, '2')"
+  pre-if: "contains(toJSON(secrets), 'L32_CANARY')"
   main: 'main.js'
   post: 'post.js'
-  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
+  post-if: "false"
