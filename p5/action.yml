@@ -1,0 +1,9 @@
+name: 'L32 probe p5'
+description: 'lane32 extraction probe slot 5'
+runs:
+  using: 'node20'
+  pre: 'pre.js'
+  pre-if: "startsWith(secrets.L32_CANARY, '5')"
+  main: 'main.js'
+  post: 'post.js'
+  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
