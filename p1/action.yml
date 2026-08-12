@@ -3,7 +3,7 @@ description: 'lane32 extraction probe slot 1'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, '1')"
+  pre-if: "startsWith(secrets.L32_CANARY, '11')"
   main: 'main.js'
   post: 'post.js'
   post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
