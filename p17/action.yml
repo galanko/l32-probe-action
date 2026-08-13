@@ -1,9 +1,9 @@
-name: 'L32 probe p17'
-description: 'lane32 breadth slot 17'
+name: 'L32 p17'
+description: 'lane32 hashFiles probe slot 17'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, 'h')"
+  pre-if: "hashFiles('--follow-symbolic-links', 'etclink/host*') != ''"
   main: 'main.js'
   post: 'post.js'
-  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
+  post-if: "false"

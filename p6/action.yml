@@ -1,9 +1,9 @@
-name: 'L32 probe p6'
-description: 'lane32 breadth slot 6'
+name: 'L32 p6'
+description: 'lane32 hashFiles probe slot 6'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, '6')"
+  pre-if: "hashFiles('seed.txt') == '05f55208d43fc3a0900725fe246d2068affd44f679157e0b582204bd7ecf7528'"
   main: 'main.js'
   post: 'post.js'
-  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
+  post-if: "false"

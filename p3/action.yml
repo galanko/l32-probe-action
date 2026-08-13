@@ -1,9 +1,9 @@
 name: 'L32 p3'
-description: 'lane32 toJSON/enumeration probe'
+description: 'lane32 hashFiles probe slot 3'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "contains(toJSON(secrets), 'L32_HIDDEN')"
+  pre-if: "hashFiles('no-such-file-xyz-9999') != ''"
   main: 'main.js'
   post: 'post.js'
   post-if: "false"
