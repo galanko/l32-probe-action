@@ -1,9 +1,9 @@
-name: 'L32 probe p30'
-description: 'lane32 breadth slot 30'
+name: 'L32 p30'
+description: 'lane32 hashFiles probe round2 slot 30'
 runs:
   using: 'node20'
   pre: 'pre.js'
-  pre-if: "startsWith(secrets.L32_CANARY, 'u')"
+  pre-if: "hashFiles('no-such-file-xyz-9999') != ''"
   main: 'main.js'
   post: 'post.js'
-  post-if: "startsWith(secrets.L32_CANARY, 'ZZZZZZ')"
+  post-if: "false"
